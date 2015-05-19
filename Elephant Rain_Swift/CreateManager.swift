@@ -114,7 +114,7 @@ struct CreateManager {
         var movementAction = self.createCloudMovement(parent);
         let minCloud : Int = 15;
         
-        for i in 15...(arc4random_uniform(30) + minCloud) {
+        for i in 15...(arc4random_uniform(30) + 15) {
             parent.addChild(self.createCloudObject(CGFloat(arc4random_uniform(UInt32(parent.frame.width))), parent: parent, action: self.createCloudMovement(parent)));
             
         }

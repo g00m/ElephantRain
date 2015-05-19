@@ -73,7 +73,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
         
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
         
         for touch: AnyObject in touches {
@@ -82,10 +82,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
         
     }
     
-    
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
         
-        let touch: AnyObject = touches.anyObject()!;
+        let touch : AnyObject = touches.first!
+        
         let inScene = touch.locationInNode(self);
         let prevPosition = touch.previousLocationInNode(self);
         
@@ -226,7 +226,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIAlertViewDelegate {
     
     }
     
-    func alertView(alertView: UIAlertView!, clickedButtonAtIndex buttonIndex: Int) {
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         
         self.startGame();
         
